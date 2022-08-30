@@ -35,8 +35,8 @@ class PlaceFragment : Fragment() {
         recyclerView.layoutManager = layoutManager
         adapter = PlaceAdapter(this, viewModel.placeList)
         recyclerView.adapter = adapter
-        searchPlaceEdit.addTextChangedListener { editable ->
-            val content = editable.toString()
+        sousuo.setOnClickListener {
+            val content = searchPlaceEdit.text.toString()
             if (content.isNotEmpty()) {
                 viewModel.searchPlaces(content)
             } else {
